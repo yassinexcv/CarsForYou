@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: poppins;
+}
+
+nav{
+  background: #000000;
+  height: 80px;
+  width: 100%;
+}
+
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding-left: 50px;
+  font-weight: bold;
+}
+
+nav ul{
+  float: right;
+  padding-right: 100px;
+  z-index: 2;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: rgb(245, 0, 0);
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #afb1b3;
+  transition: .5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: step-start .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #fa0c0c;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/serjan-midili-8iZdhhP5bwg-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+
+  box-sizing: border-box;
+  position: relative;
+}
+
+h2{
+  font-size: 32px;
+  color: #434343;
+  margin: 50px;
+}
+html { 
+  scroll-behavior: smooth;
+}
+
+.hero{
+  top: 55%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+  font-family: 'poppins';
+  justify-content: center;
+}
+
+.hero H1{
+  margin-bottom: 50px;
+}
+
+.hero p{
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.btn {
+
+  justify-content: center;
+  display: flex;
+}
+
+.hero a{
+   width: 200px;
+   font-size: 17px;
+   padding: 20px 0px;
+   background-color: #4CCE6C;
+   color: #fff;
+   display: inline-block;
+   line-height: 20px;
+   border-radius: 10px;
+   text-align: center;   
+  }
+
+.container{
+  text-align: center;
+  align-items:center;
+  justify-content: center;
+  margin-bottom: 30px;
+  
+}
+
+/* sur nous */
+.container .RentMeNow{
+  background-color: #f3f3f3;
+  padding: 100px;   
+}
+
+.container .RentMeNow h2{
+  margin: 0;
+}
+
+.container .RentMeNow p{
+  margin-top: 50px;
+}
+
+/* deccription*/
+/*promontion du moi */
+.container .box img{
+  width: 250px;
+  height: 250px;
+  border-radius: 4px;
+}
+
+.reserve-btn{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.reserve-btn a{
+    margin-right: 0px;
+    width: 250px;
+    font-size: 17px;
+    padding: 20px 0px;
+    background-color:  #4CCE6C;
+    color: #fff;
+    display: inline-block;
+    line-height: 10px;
+    border-radius: 40px;
+    
+}
+
+.detail h3{
+    margin-top: 4px;
+}
+
+.detail p{
+    margin: 5px;
+}
+
+.container .reserve-box .box{
+    margin: 10px;
+    justify-self: center;
+}
+
+.container .reserve-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+/* fin du promo du mois   */
+/* SERVICE  */
+.container .collections h2{
+  margin: 20px;
+  padding-bottom: 40px;
+  
+  }
+
+  .container .first-collections .collection img,
+  .container .second-collections .collection img{
+      width: 520px;
+      height: 300px;
+      border-radius: 1px;
+  } 
+
+  .container .first-collections .collection h2,
+  .container .second-collections .collection h2{
+      position: absolute;
+      top: 2%;
+      left: 3%;
+      color: rgb(233, 227, 227);
+      cursor: pointer;
+  }
+
+  .container .definition .definition-text p,
+  .container .definition .definition-text p{
+      text-align: justify;
+  }
+
+  #construction-machine{
+      position: absolute;
+      top: -5%;
+      left: 3%;
+      color: #fff;
+      cursor: pointer;
+  }
+
+  .container .first-collections .collection,
+  .container .second-collections .collection{
+      margin-right: 20px;
+      margin-bottom: 60px;
+      position: relative;
+      transition: 400ms;
+  }
+
+  .container .first-collections .collection:hover,
+  .container .second-collections .collection:hover{
+      transform: scale(1.02);
+      transition: 400ms;
+      opacity: 0.9;
+  }
+
+  .container .first-collections,
+  .container .second-collections{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  } 
+
+  .container .collections{
+      background-color: #F7F7F7;
+      padding: 0px;
+      width: 100%;
+      align-items:center;
+      justify-content: center;
+  }
+
+  /* end of collections  */
+  /* about definition */
+.container .definition{
+  padding: 60px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#definiftion{
+  flex-wrap:wrap;
+}
+
+.container .definition .definition-img img{
+  width: 530px;
+  height: 353px;
+  border-radius: 4px;
+}
+
+.container .definition .definition-img img:hover{
+  transform: scale(1.02);
+  transition: 400ms;
+  opacity: 0.9;
+}
+
+.container .definition .definition-text{
+  width: 520px;
+  height: 353px;
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
+  /* END OFabout definition */
+ 
+
+/* -------Footer---------- */
+
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+  justify-content: space-between;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+.copyright{
+  text-align: center; 
+  background:#212528 ;
+  color: #fff;
+  margin: 0;
+  padding-bottom: 15px;
+}
+.copyright p{
+  margin: 0;
+}
+
+
+
+@media screen and (max-width:960px) {
+  .col{
+    flex: 100%;
+    max-width: 80%;
+  }
+  .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  
+  @media screen and (max-width:375px) {
+  #email{
+      width: 300px !important;
+  }
+  button{
+      width: 300px !important;
+  }
+  .app-img img{
+      width: 300px;
+  }
+  .definition{
+      padding: 0px !important;
+  }
+  .definition-text h2{
+      margin: 0px; 
+  }
+  .definition-img {
+      padding-top: 50px !important;
+      margin-top: -60px;
+  }
+  .definition-img img{
+      width: 300px !important;
+  }
+  .collections img{
+      width: 300px !important;
+  }
+  .collection{
+      margin: 0px !important;
+  }
+  .container .RentMeNow {
+      padding: 100px 40px !important;
+  }
+  .stars img {
+    width: 20px;
+    height: 20px;
+}
+}
+
+/* -------End of footer---------- */
+
+.container3{
+  width: 90%;
+  margin: auto;
+}
