@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reservation</title>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <link rel="stylesheet" href="./CSS/reservation.css">
+
+
+
+</head>
+
+<body>
+
+   <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+         <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a href="./INdex.html">RentMeNow</a> </label>
+      <ul>
+         <li><a class="active" href="INdex.html">Home</a></li>
+         <li><a href="Car-collection.html">Category</a></li>
+         <li><a href="contact.html">Contact us</a></li>
+         <li><a href="RESEVATION.HTML">Reservation</a></li>
+      </ul>
+   </nav>
+
+   
+    <section>
+        <form name="formulaire" class="select">
+            <h1>Reservation</h1>
+            <div class="container">
+                <select name="véhicule" id="select1">
+                    <option>choix véhicule</option>
+                    <option>moto</option>
+                    <option>compact</option>
+                    <option>citadin</option>
+                    <option>utilitaire</option>
+                    <option>berlin</option>
+                    <option>camion</option>
+                    <option>engin de chantier</option>
+                </select>
+            </div>
+            <div class="container">
+                <select name="carburant" id="select2">
+                    <option>selectioner une carburant</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="container">
+                <select name="boiteDeVitess" id="select3">
+                    <option>selectioner la Boite De Vitess</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="container">
+                <input type="number">
+            </div>
+            <div class="container">
+                <a>prix</a>
+                <H3></H3>
+            </div>
+        </form>
+   </section>
+   <script>
+
+      function remove_carburant() {
+          for (let i = 1; i < formulaire.carburant.length; i++) {
+              formulaire.carburant.options[i].innerText = '';
+          }
+      }
+      let boiteDeVitess;
+      formulaire.véhicule.addEventListener('change', function () {
+          let index = formulaire.véhicule.selectedIndex;
+          let carburant;
+  
+          // choose what is index of véhicule
+          switch (index) {
+              case 0:
+                  remove_carburant();
+                  break;
+              case 1:
+                  remove_carburant();
+                  carburant = ['Electrique', 'Essence'];
+                  boiteDeVitess = 'none';
+                  break;
+              case 2:
+                  remove_carburant();
+                  carburant = ['Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 3:
+                  remove_carburant();
+                  carburant = ['Electrique', 'Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 4:
+                  remove_carburant();
+                  carburant = ['Diesel'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+              case 5:
+                  remove_carburant();
+                  carburant = ['Hybirde', 'Essence', 'Diesel'];
+                  boiteDeVitess = 'Automatique';
+                  break;
+              case 6:
+                  remove_carburant();
+                  carburant = ['Diesel'];
+                  boiteDeVitess = 'Automatique';
+                  break;
+              case 7:
+                  remove_carburant();
+                  carburant = ['Diesel', 'Essence'];
+                  boiteDeVitess = 'Manuelle';
+                  break;
+          }
+  
+          // fill carburant and boiteDeVitess
+          for (let i = 0; i < carburant.length; i++) {
+              formulaire.carburant.options[i + 1].innerText = carburant[i];
+          }
+          formulaire.boiteDeVitess.options[1].innerText = boiteDeVitess;
+  
+  
+      });
+  
+      document.querySelector("body > section > form > div:nth-child(6) > a").addEventListener('click', function () {
+          // get value of select tags
+          let cars = document.querySelector("#select1").value;
+          let carcarburant = document.querySelector("#select2").value;
+          let day = document.querySelector("body > section > form > div:nth-child(5) > input[type=number]").value;
+          let price;
+          console.log(cars);
+          console.log(carcarburant);
+          console.log(boiteDeVitess);
+  
+          // calcule boite de vittes none de moto
+          if (boiteDeVitess == 'none') {
+              if (cars == 'moto') {
+                  if (carcarburant == 'Electrique') {
+                      price = (10 * 0.05) + 10;
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = (10 * 0.14) + 10;
+                  }
+              }
+          }
+          // calcule boite de vittes auto
+          if (boiteDeVitess == 'Automatique') {
+              // calcule berlin
+              if (cars == 'berlin') {
+                  if (carcarburant == 'Hybirde') {
+                      price = ((20 * 0.19) + (20 * 0.09)) + 20;
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = ((20 * 0.19) + (20 * 0.14)) + 20;
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = ((20 * 0.19) + (20 * 0.21)) + 20;
+                  }
+              }
+              // calcule camion
+              if (cars == 'camion') {
+                  if (carcarburant == 'Diesel') {
+                      price = ((250 * 0.19) + (250 * 0.21)) + 250;
+                  }
+              }
+          }
+          // calcule boite de vittes manuelle
+          if (boiteDeVitess == 'Manuelle') {
+              // calcule compact
+              if (cars == 'compact') {
+                  if (carcarburant == 'Hybirde') {
+                      price = 14 + (14 * 0.09);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 14 + (14 * 0.14);
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = 14 + (14 * 0.21);
+                  }
+              }
+              // calcule citadin
+              if (cars == 'citadin') {
+                  if (carcarburant == 'Hybirde') {
+                      price = 12 + (12 * 0.09);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 12 + (12 * 0.14);
+                  }
+                  if (carcarburant == 'Diesel') {
+                      price = 12 + (12 * 0.21);
+                  }
+                  if (carcarburant == 'Electrique') {
+                      price = 12 + (12 * 0.05);
+                  }
+              }
+              // calcule utilitaire
+              if (cars == 'utilitaire') {
+                  if (carcarburant == 'Diesel') {
+                      price = 16 + (16 * 0.21);
+                  }
+              }
+              // calcule engin de chantier
+              if (cars == 'engin de chantier') {
+                  if (carcarburant == 'Diesel') {
+                      price = 900 + (900 * 0.21);
+                  }
+                  if (carcarburant == 'Essence') {
+                      price = 900 + (900 * 0.14);
+                  }
+              }
+          }
+  
+          price = price * day;
+          console.log(price);
+           alert(price);
+          document.querySelector("body > section > form > div:nth-child(6) > h3").innerText = price;
+      });
+  </script>
+   
+   <footer class="footer">
+      <div class="container3">
+         <div class="row">
+            <div class="footer-col">
+               <h4>company</h4>
+               <ul>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">our services</a></li>
+                  <li><a href="#">privacy policy</a></li>
+                  <li><a href="#">affiliate program</a></li>
+               </ul>
+            </div>
+            <div class="footer-col">
+               <h4>get help</h4>
+               <ul>
+                  <li><a href="#">FAQ</a></li>
+
+                  <li><a href="#">payment options</a></li>
+               </ul>
+            </div>
+
+            <div class="footer-col">
+               <h4>follow us</h4>
+               <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+            </div>
+         </div>
+         <div class="copyright">
+            <p>Yassine Touti © 2021 YouCode.</p>
+         </div>
+      </div>
+
+   </footer>
